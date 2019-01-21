@@ -25,7 +25,7 @@
 	 		steps{
 		 			echo "------------>Checkout<------------"
 		 			checkout([$class: 'GitSCM', 
-		 			branches: [[name: '*/develop']],
+		 			branches: [[name: '*/master']],
 					doGenerateSubmoduleConfigurations: false, 
 					extensions: [], 
 					gitTool: 'Git_Centos', 
