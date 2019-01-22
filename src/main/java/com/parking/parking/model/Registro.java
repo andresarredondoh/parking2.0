@@ -22,7 +22,17 @@ public class Registro implements Serializable {
 	private static final long serialVersionUID = -2501488190681855867L;
 
 	public Registro() {
-		
+	}
+	public Registro(String tipoVehiculo, String Placa) {
+		super();
+		this.tipoVehiculo=tipoVehiculo;
+		this.placa=Placa;
+	}
+	public Registro(Long id,String tipoVehiculo, String Placa) {
+		super();
+		this.id=id;
+		this.tipoVehiculo=tipoVehiculo;
+		this.placa=Placa;
 	}
 	
 	

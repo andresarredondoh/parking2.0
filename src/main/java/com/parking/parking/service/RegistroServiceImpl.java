@@ -46,7 +46,7 @@ public class RegistroServiceImpl implements RegistroService {
 		return hora;
 	}
 
-	private boolean validator(Registro registro) {
+	public boolean validator(Registro registro) {
 		boolean isValid = true;
 		if (registro.getTipoVehiculo() == null || registro.getTipoVehiculo() == "") {
 			isValid = false;
