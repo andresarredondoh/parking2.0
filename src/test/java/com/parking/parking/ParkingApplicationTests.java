@@ -22,15 +22,13 @@ import com.parking.parking.service.RegistroService;
 import com.parking.parking.service.RegistroServiceImpl;
 import com.parking.parking.util.MapeoDTO;
 
-
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ParkingApplicationTests {
-	
+
 	@InjectMocks
 	RegistroServiceImpl registroServiceImpl;
 
-	
 	@InjectMocks
 	RegistroServiceImpl registroServiceImplSpy = Mockito.spy(RegistroServiceImpl.class);
 
@@ -39,39 +37,40 @@ public class ParkingApplicationTests {
 
 	@Mock
 	private MapeoDTO mapeoDTO;
-	
+
 	@Before
 	public void before() {
 		MockitoAnnotations.initMocks(this);
 	}
 
-	
 	@Test
 	public void save() {
-		Registro registro = new Registro("Carro","OMK944");
+		Registro registro = new Registro("Carro", "OMK944");
 		registro.setFechaIngreso(LocalDateTime.now());
-		registro=registroRepository.save(registro);
-		assertTrue(registro==null);
-		
+		registro = registroRepository.save(registro);
+		assertTrue(registro == null);
+
 	}
-	
+
 	@Test
 	public void findAll() {
 		List<Registro> lista = this.registroRepository.findAll();
-		assertTrue(lista!=null);
+		assertTrue(lista != null);
 	}
+
 //	
 	@Test
 	public void deleteUser() {
 		Registro registro = new Registro((long) 1, "Carro", "OMK944");
 		registro.setFechaIngreso(LocalDateTime.now());
-		
-		when(registroRepository.getOne(registro.getId())).thenReturn(registro);
-        Integer a = registroServiceImpl.deleteUser(registro);
 
-        assertTrue(a!=null);
-		
+		when(registroRepository.getOne(registro.getId())).thenReturn(registro);
+		Integer a = registroServiceImpl.deleteUser(registro);
+
+		assertTrue(a != null);
+
 	}
+
 //	
 	@Test
 	public void validator() {
@@ -79,15 +78,21 @@ public class ParkingApplicationTests {
 		registro.setFechaIngreso(LocalDateTime.now());
 		boolean validate = registroServiceImpl.validator(registro);
 		assertTrue(validate);
-		
-		
+
 	}
+
 //	
-	@Test
-	public void cantidadDeVehiculos() {
-	Integer carros= 20;
-	Integer motos =10;
-	}
+//	@Test
+//	public void cantidadDeVehiculos() {
+//		Registro registro = new Registro("Carro", "OMK944");
+//		registro.setFechaIngreso(LocalDateTime.now());
+//		Integer carros = 20;
+//		Integer motos = 10;
+//		if (registro.getTipoVehiculo().equals("Carro") || registro.getTipoVehiculo().equals("Moto")) {
+//			
+//		}
+//
+//	}
 //	
 //	@Test
 //	public void dateValidator() {
@@ -114,6 +119,5 @@ public class ParkingApplicationTests {
 //		
 //	}
 //	
-	
 
 }

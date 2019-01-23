@@ -32,7 +32,7 @@
 					submoduleCfg: [], 
 					userRemoteConfigs: 
 						[[
-							credentialsId: 'GitHub_andres.arredondo',
+							credentialsId: 'GitHub_andresarredondoh',
 							url: 'https://github.com/andresarredondoh/parking2.0.git'
 						]]])
 						
